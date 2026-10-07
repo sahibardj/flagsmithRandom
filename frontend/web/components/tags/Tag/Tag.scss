@@ -1,0 +1,24 @@
+// The picker's checkbox, drawn inside the chip. It takes the chip's ink so it
+// holds against every fill in the palette, but at a fraction: at full strength
+// a near-black square dominates a pale tint. The old chip did the same with the
+// tag's own hue at 24%.
+//
+// color-mix rather than the oklch(from …) used elsewhere: those derive from a
+// named token, and `from currentColor` failing would leave no border at all.
+.tag-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
+  border-radius: var(--radius-xs);
+
+  &--on {
+    border-color: currentColor;
+    background-color: currentColor;
+    // The tick reads against the filled box, not against the chip.
+    color: var(--color-surface-default);
+  }
+}

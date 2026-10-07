@@ -21,6 +21,17 @@
       height: 34px;
       justify-content: center;
     }
+    // Transitional. These swatch grids still wrap a Tag, which now draws the
+    // token chip rather than the legacy .chip. A swatch has no label, so the
+    // chip has only its padding to give it width and has to be stretched to
+    // the box or there is nothing to click. Both the grids and this rule go
+    // when TagColourPicker lands.
+    .ds-chip {
+      margin: 0;
+      width: 100%;
+      height: 34px;
+      justify-content: center;
+    }
   }
   &-values {
     row-gap: 8px;

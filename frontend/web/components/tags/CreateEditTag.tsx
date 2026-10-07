@@ -195,7 +195,7 @@ const CreateEditTag: FC<CreateEditTagType> = ({
             {Constants.tagColors.map((color) => (
               <div key={color} className='tag--select'>
                 <Tag
-                  onClick={(e: TTag) => update('color', e.color)}
+                  onClick={() => update('color', color)}
                   selected={tag?.color === color}
                   tag={{ color }}
                 />
